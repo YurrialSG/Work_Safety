@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "548433572381",
+    "firebase_url": "https://worksafety-f033a.firebaseio.com",
+    "project_id": "worksafety-f033a",
+    "storage_bucket": "worksafety-f033a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548433572381:android:d3237fffb38f1044",
+        "android_client_info": {
+          "package_name": "com.example.worksafetymobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548433572381-71rq8h6kq6idkg2ee0tnka9jvmor4hj5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.worksafetymobile",
+            "certificate_hash": "4772c5205004c2cbce8871c2ad8696b27d5ab14a"
+          }
+        },
+        {
+          "client_id": "548433572381-241eq4ibgl0gsqr4i78j6mafcb5d7tt8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBteUwLHcue6vMYOiJ5wVkoUnW9E9Ipyfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548433572381-241eq4ibgl0gsqr4i78j6mafcb5d7tt8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
