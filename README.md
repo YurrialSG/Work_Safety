@@ -1,2 +1,2 @@
-# Work_Safety
-Sistema distribuído de Controle de Riscos presentes no ambientes de trabalho.
+# Work Safety - Sistema Distribuído
+Sistema distribuído nas plataformas Web e Mobile.
