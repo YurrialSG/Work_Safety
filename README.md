@@ -3,7 +3,7 @@ Trabalho prático realizado para a disciplina de Sistemas Distribuídos do curso
 
 #### Introdução
 
-Um sistema distribu´ıdo desenvolvido em Web e Mobile, com a finalidade de listar os funcionarios da empresa X, em ambas plataformas simultaneamente, utilizando a IDE Android Studio (Mobile) e a IDE Visual Code (Web) no seu desenvolvimento, tendo como integrante principal o Firebase com a sua funcionalidade Realtime Database para o armazenamento em nuvem e instantaneo.
+Um sistema distribuído desenvolvido em Web e Mobile, com a finalidade de listar os funcionarios da empresa X, em ambas plataformas simultaneamente, utilizando a IDE Android Studio (Mobile) e a IDE Visual Code (Web) no seu desenvolvimento, tendo como integrante principal o Firebase com a sua funcionalidade Realtime Database para o armazenamento em nuvem e instantaneo.
 
 **Tecnologias:**
 
@@ -35,3 +35,31 @@ Firebase foi escolhido pelo fato de possuir uma facilidade na sua utilizac¸ao d
 * Integrar o sistema com Firebase;
 * Ter acesso à internet;
 * Dados simultâneos em ambas plataformas.
+
+#### Work Safety
+
+Nesta seção são apresentadas as telas do sistema para um melhor entendimento de suas funcionalidades.
+
+<p align="center">
+<img src="WorkSafetyWeb.png" width="800" height="450">
+  <br>
+  <b>Figura 1. Tela principal do sistema Web</b>
+  <br>
+  <br>
+</p>
+
+<p align="center">
+<img src="WorkSafetyMobile.jpeg" width="300" height="350">
+  <br>
+  <b>Figura 2. Tela principal do sistema Mobile</b>
+  <br>
+  <br>
+</p>
+
+<p align="center">
+<img src="RealtimeDatabase.png" width="300" height="300">
+  <br>
+  <b>Figura 3. Dados inseridos no Realtime Database</b>
+  <br>
+  <br>
+</p>
