@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     //alterar dados
                     databaseReference.child(userId).child("name").setValue(name);
                     Toast.makeText(MainActivity.this, "Funcionário alterado com sucesso!", Toast.LENGTH_SHORT).show();
+                    userId = "";
                 }
 
                 edtName.setText(null);

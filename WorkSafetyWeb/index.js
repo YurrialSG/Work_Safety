@@ -10,7 +10,6 @@ firebase.initializeApp(config);
 
 var d = new Date();
 var t = d.getTime();
-var id = t;
 
 document.getElementById("form").addEventListener("submit", (e) => {
     var name = document.getElementById("name").value;
@@ -20,8 +19,8 @@ document.getElementById("form").addEventListener("submit", (e) => {
 });
 
 function createFunc(name) {
+    var id = t;
     id += 1;
-    console.log(id);
     var func = {
         id: id,
         name: name
