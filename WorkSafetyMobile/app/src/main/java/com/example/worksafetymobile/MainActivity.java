@@ -1,5 +1,6 @@
 package com.example.worksafetymobile;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listViewUsers;
     List<Funcionario> funcionarios;
     public static String userId;
-
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +39,11 @@ public class MainActivity extends AppCompatActivity {
         //crud com o firebase Realtime Database
         databaseReference = FirebaseDatabase.getInstance().getReference("funcionarios");
 
-        btnSave = (Button)findViewById(R.id.btnSave);
+        btnSave = (Button) findViewById(R.id.btnSave);
         edtName = (EditText) findViewById(R.id.edtName);
         listViewUsers = (ListView) findViewById(R.id.listViewUsers);
+
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,13 +77,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 funcionarios.clear();
+                progressBar.setVisibility(View.VISIBLE);
+                listViewUsers.setVisibility(View.GONE);
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()){
                     Funcionario funcionario = postSnapshot.getValue(Funcionario.class);
                     funcionarios.add(funcionario);
                 }
-
                 FuncList userAdapter = new FuncList(MainActivity.this, funcionarios, databaseReference, edtName);
                 listViewUsers.setAdapter(userAdapter);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressBar.setVisibility(View.GONE);
+                        listViewUsers.setVisibility(View.VISIBLE);
+                    }
+                }, 2000);
             }
 
             @Override

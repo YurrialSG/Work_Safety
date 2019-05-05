@@ -19,14 +19,22 @@ document.getElementById("form").addEventListener("submit", (e) => {
 });
 
 function createFunc(name) {
-    var id = t;
-    id += 1;
-    var func = {
-        id: id,
-        name: name
-    }
-    let db = firebase.database().ref("funcionarios/" + id);
-    db.set(func);
+  
+   // let db = firebase.database().ref("funcionarios/" + id);
+
+    let db = firebase.database().ref("funcionarios");
+    db.push().then(function (data) {
+        var func = {
+            id: data.key,
+            name: name
+        }
+        firebase.database().ref("funcionarios/" + data.key).set(func);
+    }).catch(function (error) {
+        alert(error);
+        console.error(error);
+    });
+
+    //db.set(func);
     document.getElementById("cardSection").innerHTML = '';
     readFunc();
 }
@@ -39,12 +47,12 @@ function readFunc() {
 
         <div class="card text-center">
             <div class="card-header">
-                ${funcValue.id}
+                ${data.key}
             </div>
             <div class="card-body">
                 <p class="card-text">${funcValue.name}</p>
-                <button type="submit" style="color:white" class="btn btn-warning" onclick="updateFunc(${funcValue.id},'${funcValue.name}')"><i class="far fa-edit"></i> Editar</button>
-                <button type="submit" class="btn btn-danger" onclick="deleteFunc(${funcValue.id})"><i class="fas fa-trash-alt"></i> Deletar</button>
+                <button type="submit" style="color:white" class="btn btn-warning" onclick="updateFunc('${data.key}','${funcValue.name}')"><i class="far fa-edit"></i> Editar</button>
+                <button type="submit" class="btn btn-danger" onclick="deleteFunc('${data.key}')"><i class="fas fa-trash-alt"></i> Deletar</button>
             </div>
         </div>       
         <br />
